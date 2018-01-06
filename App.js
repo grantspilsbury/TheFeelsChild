@@ -21,17 +21,14 @@ export default class App extends Component<{}> {
   }
 
   onPressHappyButton() {
-    Alert.alert('Thank you')
     this.handleButtonPress(2);
   }
 
   onPressHappySadButton() {
-    Alert.alert('Thank you')
     this.handleButtonPress(1);
   }
 
   onPressSadButton() {
-    Alert.alert('Thank you')
     this.handleButtonPress(0);
   }
 
@@ -56,7 +53,7 @@ export default class App extends Component<{}> {
         </Text>
         <View style={styles.rowContainer}>
           <TouchableHighlight
-            underlayColor="rgba(173,216,230,0.5)"
+            underlayColor="rgba(255,255,50,1)"
             style={styles.button}
             onPress={this.onPressHappyButton}>
             <Image
@@ -65,7 +62,7 @@ export default class App extends Component<{}> {
             />
           </TouchableHighlight>
           <TouchableHighlight
-            underlayColor="rgba(173,216,230,0.5)"
+            underlayColor="rgba(255,255,50,1)"
             style={styles.button}
             onPress={this.onPressHappySadButton}>
             <Image
@@ -74,7 +71,7 @@ export default class App extends Component<{}> {
             />
           </TouchableHighlight>
           <TouchableHighlight
-            underlayColor="rgba(173,216,230,0.5)"
+            underlayColor="rgba(255,255,50,1)"
             style={styles.button}
             onPress={this.onPressSadButton}>
             <Image
