@@ -32,6 +32,19 @@ export default class App extends Component<{}> {
     this.handleButtonPress(0);
   }
 
+  // onEmergencyPress() {
+  //   Alert.alert(
+  //     'Alert Title',
+  //     'My Alert Msg',
+  //     [
+  //       {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+  //       {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+  //       {text: 'OK', onPress: () => console.log('OK Pressed')},
+  //     ],
+  //     { cancelable: false }
+  //   )
+  // }
+
   handleButtonPress(val){
       fetch('http://localhost:3000/users/5a4fd8202ab6f472bff97c03/scores', {
       method: 'POST',
