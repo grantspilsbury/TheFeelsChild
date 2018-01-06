@@ -14,18 +14,25 @@ import {
 export default class App extends Component<{}> {
   constructor(props) {
     super(props);
-  }
-
-  onPressSadButton() {
-    handleButtonPress(0);
-  }
-
-  onPressHappySadButton() {
-    handleButtonPress(1);
+    this.handleButtonPress = this.handleButtonPress.bind(this);
+    this.onPressHappyButton = this.onPressHappyButton.bind(this);
+    this.onPressHappySadButton = this.onPressHappySadButton.bind(this);
+    this.onPressSadButton = this.onPressSadButton.bind(this);
   }
 
   onPressHappyButton() {
-    handleButtonPress(2);
+    Alert.alert('Thank you')
+    this.handleButtonPress(2);
+  }
+
+  onPressHappySadButton() {
+    Alert.alert('Thank you')
+    this.handleButtonPress(1);
+  }
+
+  onPressSadButton() {
+    Alert.alert('Thank you')
+    this.handleButtonPress(0);
   }
 
   handleButtonPress(val){
@@ -48,22 +55,31 @@ export default class App extends Component<{}> {
           How are you feeling today?
         </Text>
         <View style={styles.rowContainer}>
-          <TouchableHighlight onPress={this.onPressButton}>
+          <TouchableHighlight
+            underlayColor="rgba(173,216,230,0.5)"
+            style={styles.button}
+            onPress={this.onPressHappyButton}>
             <Image
-              style={styles.button}
-              source={require('./happy.jpg')}
+              style={styles.image}
+              source={require('./images/happy.png')}
             />
           </TouchableHighlight>
-          <TouchableHighlight onPress={this.onPressButton}>
+          <TouchableHighlight
+            underlayColor="rgba(173,216,230,0.5)"
+            style={styles.button}
+            onPress={this.onPressHappySadButton}>
             <Image
-              style={styles.button}
-              source={require('./happysad.jpg')}
+              style={styles.image}
+              source={require('./images/happysad.png')}
             />
           </TouchableHighlight>
-          <TouchableHighlight onPress={this.onPressButton}>
+          <TouchableHighlight
+            underlayColor="rgba(173,216,230,0.5)"
+            style={styles.button}
+            onPress={this.onPressSadButton}>
             <Image
-              style={styles.button}
-              source={require('./sad.jpg')}
+              style={styles.image}
+              source={require('./images/sad.png')}
             />
           </TouchableHighlight>
         </View>
@@ -90,8 +106,14 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   button: {
-    width: 100,
-    height: 140,
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 60
+  },
+  image: {
+    width: 120,
+    height: 120,
+    paddingBottom: 20,
     resizeMode: Image.resizeMode.contain,
   }
 });
