@@ -99,21 +99,21 @@ export default class App extends Component<{}> {
         </View>
         <View style={styles.rowContainer}>
           <TouchableHighlight
-            underlayColor="rgba(102,255,51,0.5)"
-            style={styles.button}
-            onPress={this.onPressHappyButton2}>
-            <Image
-              style={styles.image}
-              source={require('./images/happy1.png')}
-            />
-          </TouchableHighlight>
-          <TouchableHighlight
             underlayColor="rgba(255,51,51,0.5)"
             style={styles.button}
             onPress={this.onPressSadButton2}>
             <Image
               style={styles.image}
               source={require('./images/sad2.png')}
+            />
+          </TouchableHighlight>
+          <TouchableHighlight
+            underlayColor="rgba(102,255,51,0.5)"
+            style={styles.button}
+            onPress={this.onPressHappyButton2}>
+            <Image
+              style={styles.image}
+              source={require('./images/happy1.png')}
             />
           </TouchableHighlight>
         </View>
