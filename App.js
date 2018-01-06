@@ -1,37 +1,72 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
   Text,
+  Button,
+  Alert,
+  Slider,
+  Image,
+  TouchableHighlight,
   View
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
 export default class App extends Component<{}> {
+  constructor(props) {
+    super(props);
+  }
+
+  onPressSadButton() {
+    handleButtonPress(0);
+  }
+
+  onPressHappySadButton() {
+    handleButtonPress(1);
+  }
+
+  onPressHappyButton() {
+    handleButtonPress(2);
+  }
+
+  handleButtonPress(val){
+      fetch('http://localhost:3000/users/5a4fd8202ab6f472bff97c03/scores', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        score: val
+      }),
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          How are you feeling today?
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <View style={styles.rowContainer}>
+          <TouchableHighlight onPress={this.onPressButton}>
+            <Image
+              style={styles.button}
+              source={require('./happy.jpg')}
+            />
+          </TouchableHighlight>
+          <TouchableHighlight onPress={this.onPressButton}>
+            <Image
+              style={styles.button}
+              source={require('./happysad.jpg')}
+            />
+          </TouchableHighlight>
+          <TouchableHighlight onPress={this.onPressButton}>
+            <Image
+              style={styles.button}
+              source={require('./sad.jpg')}
+            />
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
@@ -42,16 +77,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fff',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    margin: 40,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  rowContainer: {
+    justifyContent: 'space-between',
+    flexDirection: 'column',
+    marginBottom: 10
   },
+  button: {
+    width: 100,
+    height: 140,
+    resizeMode: Image.resizeMode.contain,
+  }
 });
