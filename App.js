@@ -79,7 +79,7 @@ export default class App extends Component<{}> {
         </Text>
         <View style={styles.rowContainer}>
           <TouchableHighlight
-            underlayColor="rgba(232,244,248,0.5)"
+            underlayColor="rgba(102,255,51,1)"
             style={styles.button}
             onPress={this.onPressHappyButton3}>
             <Image
@@ -88,7 +88,7 @@ export default class App extends Component<{}> {
             />
           </TouchableHighlight>
           <TouchableHighlight
-            underlayColor="rgba(232,244,248,0.5)"
+            underlayColor="rgba(255,51,51,1)"
             style={styles.button}
             onPress={this.onPressSadButton1}>
             <Image
@@ -99,7 +99,7 @@ export default class App extends Component<{}> {
         </View>
         <View style={styles.rowContainer}>
           <TouchableHighlight
-            underlayColor="rgba(232,244,248,0.5)"
+            underlayColor="rgba(102,255,51,0.5)"
             style={styles.button}
             onPress={this.onPressHappyButton2}>
             <Image
@@ -108,7 +108,7 @@ export default class App extends Component<{}> {
             />
           </TouchableHighlight>
           <TouchableHighlight
-            underlayColor="rgba(232,244,248,0.5)"
+            underlayColor="rgba(255,51,51,0.5)"
             style={styles.button}
             onPress={this.onPressSadButton2}>
             <Image
@@ -119,7 +119,7 @@ export default class App extends Component<{}> {
         </View>
         <View style={styles.rowContainer}>
           <TouchableHighlight
-            underlayColor="rgba(232,244,248,0.5)"
+            underlayColor="rgba(102,255,51,0.25)"
             style={styles.button}
             onPress={this.onPressHappyButton1}>
             <Image
@@ -128,7 +128,7 @@ export default class App extends Component<{}> {
             />
           </TouchableHighlight>
           <TouchableHighlight
-            underlayColor="rgba(232,244,248,0.5)"
+            underlayColor="rgba(255,51,51,0.25)"
             style={styles.button}
             onPress={this.onPressSadButton3}>
             <Image
@@ -147,13 +147,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#add8e6',
+    backgroundColor: '#fff',
   },
   welcome: {
     fontSize: 40,
     textAlign: 'center',
     margin: 40,
-    color: '#fff'
+    color: '#000'
   },
   rowContainer: {
     flexDirection: 'row',
