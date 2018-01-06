@@ -66,30 +66,30 @@ export default class App extends Component<{}> {
         </Text>
         <View style={styles.rowContainer}>
           <TouchableHighlight
-            underlayColor="rgba(255,255,50,1)"
+            underlayColor="rgba(232,244,248,0.5)"
             style={styles.button}
             onPress={this.onPressHappyButton}>
             <Image
               style={styles.image}
-              source={require('./images/happy.png')}
+              source={require('./images/happy2.png')}
             />
           </TouchableHighlight>
           <TouchableHighlight
-            underlayColor="rgba(255,255,50,1)"
+            underlayColor="rgba(232,244,248,0.5)"
             style={styles.button}
             onPress={this.onPressHappySadButton}>
             <Image
               style={styles.image}
-              source={require('./images/happysad.png')}
+              source={require('./images/happysad2.png')}
             />
           </TouchableHighlight>
           <TouchableHighlight
-            underlayColor="rgba(255,255,50,1)"
+            underlayColor="rgba(232,244,248,0.5)"
             style={styles.button}
             onPress={this.onPressSadButton}>
             <Image
               style={styles.image}
-              source={require('./images/sad.png')}
+              source={require('./images/sad2.png')}
             />
           </TouchableHighlight>
         </View>
@@ -103,12 +103,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#add8e6',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 40,
     textAlign: 'center',
     margin: 40,
+    color: '#fff'
   },
   rowContainer: {
     justifyContent: 'space-between',
