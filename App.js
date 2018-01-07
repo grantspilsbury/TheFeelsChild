@@ -59,7 +59,9 @@ export default class App extends Component<{}> {
   // }
 
   handleButtonPress(val){
-      fetch('http://localhost:3000/users/5a4fd8202ab6f472bff97c03/scores', {
+      var devUrl = "http://localhost:3000"
+      var prodUrl = "https://agile-wave-86536.herokuapp.com"
+      fetch(`${prodUrl}/users/5a4fd8202ab6f472bff97c03/scores`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
